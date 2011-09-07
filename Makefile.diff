@@ -1,0 +1,26 @@
+diff --git a/Makefile b/Makefile
+index f2868fe..b94fd22 100644
+--- a/Makefile
++++ b/Makefile
+@@ -52,11 +52,12 @@ LINKONLYOBJECTS =
+ 
+ ## Define application folders here
+ ## APPLICATIONS := apps/hardware
+-APPLICATIONS := apps/demos
++## APPLICATIONS := apps/demos
+ ## APPLICATIONS := apps/pacman
+ ## APPLICATIONS := apps/3D
+ 
+-MODULES   := $(APPLICATIONS) apps/core platform hardware
++## MODULES   := $(APPLICATIONS) apps/core platform hardware
++MODULES := apps/lulzyframe platform hardware
+ 
+ ## Wikipedia Demo
+ ## Copy the data file onto a microSD card: tools/MicrotouchSim/MicrotouchSim/microSD/wiki.blb
+@@ -116,4 +117,4 @@ size: $(TARGET)
+ 	@avr-size -C --mcu=${MCU} ${TARGET}
+ 
+ program: $(TARGET).hex
+-	$(AVRDUDE) $(AVRDUDE_FLAGS) -B 1 -u -U flash:w:$(TARGET).hex
+\ No newline at end of file
++	$(AVRDUDE) $(AVRDUDE_FLAGS) -B 1 -u -U flash:w:$(TARGET).hex
